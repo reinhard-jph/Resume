@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蒋鹏鸿 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-color: #1e90ff; /* 浅蓝色主色调 */
+            --secondary-color: #4682b4; /* 较深的蓝色 */
+            --light-color: #f0f8ff; /* 浅蓝色背景 */
+            --dark-color: #2c3e50; /* 深色文字 */
+            --light-gray: #f5f5f5; /* 浅灰色背景 */
+            --border-color: #e1e8ed; /* 边框颜色 */
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            font-weight: 300;
+        }
+        
+        /* 主要内容区域样式 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 卡片通用样式 */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-title i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* 侧边栏样式 */
+        .sidebar .card {
+            height: auto;
+        }
+        
+        /* 联系信息样式 */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 技能标签样式 */
+        .skill-tag {
+            display: inline-block;
+            background-color: var(--light-color);
+            color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 0 8px 8px 0;
+            font-size: 0.9rem;
+            border: 1px solid rgba(30, 144, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* 时间轴样式 */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 5px);
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .timeline-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .timeline-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        /* 项目与实习预览样式 */
+        .preview-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .preview-item:hover {
+            background-color: rgba(30, 144, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+        
+        .preview-item:last-child {
+            border-bottom: none;
+        }
+        
+        .preview-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .preview-title i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .preview-role {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+        
+        .preview-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        
+        .preview-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* PDF按钮样式 */
+        .pdf-btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        
+        .pdf-btn:hover {
+            background-color: #388E3C;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pdf-btn i {
+            margin-right: 8px;
+        }
+        
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80%;
+            overflow-y: auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+        
+        .close-btn {
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.2s;
+        }
+        
+        .close-btn:hover {
+            color: var(--dark-color);
+        }
+        
+        .modal-body {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* 项目详情样式 */
+        .project-detail-item {
+            margin-bottom: 25px;
+        }
+        
+        .project-detail-header {
+            margin-bottom: 20px;
+        }
+        
+        .project-main-title {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .project-subtitle {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .project-role-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .project-date-badge {
+            background-color: var(--light-gray);
+            color: #666;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section-content {
+            padding-left: 10px;
+        }
+        
+        .section-content ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .section-content li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .section-content li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        /* 技能详情样式 */
+        .skills-detail-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .skills-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .skills-category {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .skills-list {
+            list-style-type: none;
+        }
+        
+        .skills-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .skills-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* 科研成果样式 */
+        .publication-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+        
+        .pub-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+        }
+        
+        .pub-authors {
+            font-style: italic;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        
+        .pub-venue {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        /* 校园经历样式 */
+        .campus-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .campus-item:last-child {
+            border-bottom: none;
+        }
+        
+        .campus-role {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .campus-org {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .campus-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        
+        .campus-desc {
+            color: #555;
+        }
+        
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        /* 点击查看按钮样式 */
+        .view-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid var(--primary-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .view-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* 查看全部按钮样式 */
+        .view-all-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--primary-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            margin-top: 15px;
+        }
+        
+        .view-all-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 20px 20px 0 0;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .profile-img-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="header-content">
+            <!-- 照片容器 -->
+            <div class="profile-img-container">
+                <img src="profile.jpg"
+                     alt="蒋鹏鸿个人照片" class="profile-img" id="profile-pic">
+            </div>
+            
+            <h1 class="name">蒋鹏鸿</h1>
+            <h2 class="title">项目管理工程师 | 电子科学与技术硕士</h2>
+            <p class="tagline">专注于将前沿的毫米波传感与智能算法转化为可靠医疗健康产品的项目负责人</p>
+            
+            <!-- 功能按钮 -->
+            <a href="javascript:window.print()" class="btn">
+                <i class="fas fa-print"></i> 打印简历
+            </a>
+            <a href="#contact" class="btn" style="margin-left: 15px;">
+                <i class="fas fa-envelope"></i> 联系我
+            </a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- 主要内容区域 -->
+        <div class="main-content">
+            <!-- 左侧边栏 -->
+            <div class="sidebar">
+                <!-- 联系信息 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-address-card"></i> 联系信息</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>电话</strong><br>
+                            <span>137-6242-7957</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>邮箱</strong><br>
+                            <span>12332155@mail.sustech.edu.cn</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <strong>学历</strong><br>
+                            <span>南方科技大学硕士在读</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>籍贯</strong><br>
+                            <span>湖南衡阳</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-tag"></i>
+                        </div>
+                        <div>
+                            <strong>政治面貌</strong><br>
+                            <span>中共党员</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 技能专长 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-tools"></i> 技能专长</h3>
+                    
+                    <div class="skill-tags">
+                        <span class="skill-tag" onclick="openModal('skills')">仿真建模</span>
+                        <span class="skill-tag" onclick="openModal('skills')">软件应用</span>
+                        <span class="skill-tag" onclick="openModal('skills')">编程技能</span>
+                        <span class="skill-tag" onclick="openModal('skills')">语言能力</span>
+                        <span class="skill-tag" onclick="openModal('skills')">项目管理</span>
+                        <span class="skill-tag" onclick="openModal('skills')">信号处理</span>
+                    </div>
+                    
+                    <button class="view-btn" onclick="openModal('skills')">
+                        <i class="fas fa-external-link-alt"></i> 查看详细技能
+                    </button>
+                </div>
+                
+                <!-- 科研成果 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-flask"></i> 科研成果</h3>
+                    
+                    <p>在IEEE期刊发表多篇论文，研究方向包括天线设计、信号处理与健康监测等。</p>
+                    
+                    <button class="view-btn" onclick="openModal('publications')">
+                        <i class="fas fa-external-link-alt"></i> 查看论文详情
+                    </button>
+                </div>
+                
+                <!-- 校园经历 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-university"></i> 校园经历</h3>
+                    
+                    <p>在校期间担任党支部委员、文娱部副部长，组织多项大型活动，具备优秀的组织协调能力。</p>
+                    
+                    <button class="view-btn" onclick="openModal('campus')">
+                        <i class="fas fa-external-link-alt"></i> 查看详细经历
+                    </button>
+                </div>
+                
+                <!-- 证书与荣誉 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-award"></i> 荣誉证书</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-title">天线创新杯荣誉奖</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-title">全国大学生数学竞赛省二等奖</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-title">研究生学业一等奖学金</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-title">电子系优秀毕业生</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧主要内容 -->
+            <div class="main">
+                <!-- 个人简介 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-user"></i> 个人简介</h3>
+                    <p>南方科技大学电子科学与技术专业硕士在读（2026年6月毕业），具备扎实的射频/信号处理技术背景与丰富的项目管理经验。在校企合作项目中担任负责人，成功领导团队完成多个毫米波医疗传感项目，实现从技术研发到产品集成的全流程管理。擅长将前沿技术转化为实际产品解决方案，注重成果导向与团队协作。</p>
+                    <p>中共党员，担任电子系党支部委员与文娱部副部长，具备出色的组织协调与领导能力。致力于在医疗健康电子领域结合技术创新与项目管理，创造实际价值。</p>
+                </div>
+                
+                <!-- 教育背景 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-graduation-cap"></i> 教育背景</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023.09 - 2026.06 (预计)</div>
+                        <div class="timeline-title">南方科技大学 | 硕士</div>
+                        <div class="timeline-subtitle">电子科学与技术</div>
+                        <div class="timeline-desc">GPA: 3.58/4.0 (专业排名前10%)</div>
+                        <div class="timeline-desc">主修课程：高等电磁场理论，机器学习，计算电磁学，信号检测与估计</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019.09 - 2023.06</div>
+                        <div class="timeline-title">南方科技大学 | 学士</div>
+                        <div class="timeline-subtitle">通信工程</div>
+                        <div class="timeline-desc">GPA: 3.56/4.0 (专业排名前20%)</div>
+                        <div class="timeline-desc">主修课程：信号与系统，模拟电路，数字电路，天线工程，通信原理</div>
+                    </div>
+                </div>
+                
+                <!-- 项目经历 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-project-diagram"></i> 项目经历</h3>
+                    
+                    <!-- 非接触式心率检测仪器 -->
+                    <div class="preview-item" onclick="openModal('project1')">
+                        <h4 class="preview-title"><i class="fas fa-heartbeat"></i> 非接触式心率检测仪器 (校企合作)</h4>
+                        <span class="preview-role">项目负责人</span>
+                        <div class="preview-date">2023.12 - 2024.12</div>
+                        <div class="preview-desc">针对医疗设备需求制定毫米波心率检测方案，协调公司和学校团队，管理10万元项目预算。带领团队提前2周交付原型机，误差率从5%降至2.2%，达成医疗可用标准。</div>
+                        <a href="heart_rate_detection.pdf" class="pdf-btn" target="_blank" onclick="event.stopPropagation()">
+                            <i class="fas fa-file-pdf"></i> 查看项目PDF文档
+                        </a>
+                    </div>
+                    
+                    <!-- VNA呼吸检测 -->
+                    <div class="preview-item" onclick="openModal('project2')">
+                        <h4 class="preview-title"><i class="fas fa-lungs"></i> VNA呼吸检测 (校企合作)</h4>
+                        <span class="preview-role">算法负责人</span>
+                        <div class="preview-date">2024.07 - 2024.11</div>
+                        <div class="preview-desc">针对无感睡眠监测场景，开发生命体征信号提取算法，有效抑制体动干扰并实现咳嗽等异常呼吸事件的精准识别。算法已集成于华屹医疗无感睡眠监测仪，进入量产测试阶段。</div>
+                        <a href="vna_respiration_detection.pdf" class="pdf-btn" target="_blank" onclick="event.stopPropagation()">
+                            <i class="fas fa-file-pdf"></i> 查看项目PDF文档
+                        </a>
+                    </div>
+                    
+                    <!-- 谐振器耦合波束扫描天线设计 -->
+                    <div class="preview-item" onclick="openModal('project3')">
+                        <h4 class="preview-title"><i class="fas fa-satellite-dish"></i> 谐振器耦合波束扫描天线设计</h4>
+                        <span class="preview-role">独立完成</span>
+                        <div class="preview-date">2023.09 - 2024.09</div>
+                        <div class="preview-desc">独立运用CST软件设计三腔体耦合天线，实现阵列化布局，针对毫米波频段60-64GHz进行优化。成功设计出毫米波频段内波束扫描范围-22°到+25°，增益高于12dBi的天线。</div>
+                        <a href="antenna_design.pdf" class="pdf-btn" target="_blank" onclick="event.stopPropagation()">
+                            <i class="fas fa-file-pdf"></i> 查看项目PDF文档
+                        </a>
+                    </div>
+                    
+                    <button class="view-all-btn" onclick="openModal('projects')">
+                        <i class="fas fa-external-link-alt"></i> 查看所有项目经历详情
+                    </button>
+                </div>
+                
+                <!-- 实习经历 -->
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-briefcase"></i> 实习经历</h3>
+                    
+                    <!-- 美的集团实习 -->
+                    <div class="preview-item" onclick="openModal('internship1')">
+                        <h4 class="preview-title"><i class="fas fa-industry"></i> 美的集团 - 射频仿真工程师</h4>
+                        <span class="preview-role">实习</span>
+                        <div class="preview-date">2026.06 - 2026.08 (预计)</div>
+                        <div class="preview-desc">参与下一代转盘微波炉波导天线设计，利用顶馈开缝的方式，实现降本2.2元。利用HFSS进行波导天线以及微波炉腔体仿真，验证顶馈开缝方式的可行性与匹配。</div>
+                                                </a>
+                    </div>
+                    
+                    <button class="view-all-btn" onclick="openModal('internships')">
+                        <i class="fas fa-external-link-alt"></i> 查看实习经历详情
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 页脚区域 -->
+        <footer id="contact">
+            <div class="footer-content">
+                <h3>期待与您合作</h3>
+                <p>如果您对我的技能和经验感兴趣，欢迎随时与我联系</p>
+                
+                <div class="social-links">
+                    <a href="mailto:12332155@mail.sustech.edu.cn" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                <p>© 2026 蒋鹏鸿. 保留所有权利.</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">最后更新: 2026年3月</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- 技能详情模态框 -->
+    <div id="skills-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">技能专长详情</h2>
+                <span class="close-btn" onclick="closeModal('skills')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="skills-detail-item">
+                    <h3 class="skills-category">仿真建模</h3>
+                    <ul class="skills-list">
+                        <li><strong>高频电磁仿真助理工程师</strong>，高效利用CST、HFSS进行高频电磁仿真</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-detail-item">
+                    <h3 class="skills-category">软件应用</h3>
+                    <ul class="skills-list">
+                        <li>精通<strong>Labview、CAD</strong>等辅助设计软件，提升仿真效率与精度</li>
+                        <li>熟练使用<strong>Matlab、mmWave</strong>进行数据分析与算法实现</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-detail-item">
+                    <h3 class="skills-category">编程技能</h3>
+                    <ul class="skills-list">
+                        <li>熟练运用<strong>Java、Python、C</strong>等编程语言</li>
+                        <li>能够实现信号处理算法开发、数据分析与自动化测试</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-detail-item">
+                    <h3 class="skills-category">语言能力</h3>
+                    <ul class="skills-list">
+                        <li>大学英语<strong>四/六级</strong>，<strong>雅思6.5分</strong></li>
+                        <li>良好的英语听说读写能力，能够快速浏览英语专业书籍</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-detail-item">
+                    <h3 class="skills-category">项目管理</h3>
+                    <ul class="skills-list">
+                        <li>项目进度跟踪与甘特图制定</li>
+                        <li>资源协调与预算管理（管理10万元项目预算经验）</li>
+                        <li>风险评估与问题解决（提前识别毫米波干扰风险）</li>
+                        <li>跨团队沟通与协调（协调公司、学校团队合作）</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-detail-item">
+                    <h3 class="skills-category">信号处理与算法</h3>
+                    <ul class="skills-list">
+                        <li>毫米波雷达信号处理与特征提取</li>
+                        <li>CNN与BP神经网络模型构建与应用</li>
+                        <li>直流滤波、解卷绕及小波变换信号预处理</li>
+                        <li>BPM消除算法与多信号定位分离技术</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 科研成果模态框 -->
+    <div id="publications-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">科研成果与论文</h2>
+                <span class="close-btn" onclick="closeModal('publications')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="publication-item">
+                    <div class="pub-title">Demonstration of Multiple-Input Multiple-Output High-Scanning-Rate Coupled-Resonator Antennas for 2-D Multi-Target Localization and Heart Beat Rate Monitoring</div>
+                    <div class="pub-authors">Jiang P, Xu W and Zhang Q</div>
+                    <div class="pub-venue">IEEE Antennas and Wireless Propagation Letters (AWPL-07-25-2547) </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="pub-title">Frequency-Diverse Integrated Sensing and Communication System Utilizing Coupled-Resonator LWA with Full-Space Coverage and High Scanning Rate</div>
+                    <div class="pub-authors">Xu W, Ma D, Jiang P, Yu C, Liu B and Zhang Q</div>
+                    <div class="pub-venue">IEEE Topics in Electromagnetics, Antennas and Propagation (JSTEAP-0004-Apr-2025.R1)</div>
+                </div>
+                
+                <div class="publication-item">
+                    <h3 class="skills-category" style="margin-top: 20px;">研究方向</h3>
+                    <ul class="skills-list">
+                        <li>毫米波雷达在医疗健康监测中的应用</li>
+                        <li>耦合谐振器天线设计与波束扫描技术</li>
+                        <li>非接触式生命体征检测算法</li>
+                        <li>MIMO天线系统与多目标定位</li>
+                        <li>信号处理与机器学习算法融合</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 校园经历模态框 -->
+    <div id="campus-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">校园经历详情</h2>
+                <span class="close-btn" onclick="closeModal('campus')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="campus-item">
+                    <div class="campus-role">电子系党支部委员</div>
+                    <div class="campus-org">南方科技大学电子系</div>
+                    <div class="campus-date">2025.03 - 至今</div>
+                    <div class="campus-desc">负责党支部日常事务，组织理论学习与实践活动，协助发展新党员。</div>
+                </div>
+                
+                <div class="campus-item">
+                    <div class="campus-role">TEDxSustech演讲策划 - 项目负责人</div>
+                    <div class="campus-org">南方科技大学</div>
+                    <div class="campus-date">2020.11 - 2020.12</div>
+                    <div class="campus-desc">
+                        <ul>
+                            <li>活动策划与主题设计：负责策划以"拾贝者"为主题的校园TED演讲活动，通过头脑风暴和调研，确定演讲方向及流程安排，撰写详细策划方案</li>
+                            <li>宣传推广与招募：设计宣传海报及线上推广文案，利用校园公众号、朋友圈等多渠道宣传，并邀请叶长友、林鸿鑫等6位演讲者，覆盖多个领域</li>
+                            <li>现场执行与协调：负责活动现场布置、设备调试及流程控场，协调5个部门的30多名成员和志愿者工作，处理突发情况，确保活动顺利进行</li>
+                            <li><strong>结果：</strong>顺利完成整个TEDxSustech演讲活动，参与活动的同学好评率为100%，完成后续公众号的宣传等事宜</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="campus-item">
+                    <div class="campus-role">户外党课活动 - 负责人</div>
+                    <div class="campus-org">南方科技大学党支部</div>
+                    <div class="campus-date">2025.04 - 2025.05</div>
+                    <div class="campus-desc">
+                        <ul>
+                            <li>活动主题与线路规划：负责策划以"牢记历史"为主题的户外党课活动，制定党史馆、中英街历史纪念馆到海滨走廊的学习线路</li>
+                            <li>宣传推广：设计宣传海报及线上推广文案，在党支部实行宣传，并联系相关餐饮和旅行社负责路线和休息</li>
+                            <li>现场执行与后续宣传：负责活动现场跟进及流程控场，确保党支部同学的安全，并负责相关历史知识的讲解、新党员的入党宣誓仪式等，完成后续公众号推文的撰写</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="campus-item">
+                    <div class="campus-role">电子系学生文娱部副部长</div>
+                    <div class="campus-org">南方科技大学电子系</div>
+                    <div class="campus-date">2021.09 - 2022.10</div>
+                    <div class="campus-desc">组织策划系内文娱活动，丰富学生课余生活，协调部门内部分工与合作。</div>
+                </div>
+                
+                <div class="campus-item">
+                    <div class="campus-role">大创项目负责人</div>
+                    <div class="campus-org">南方科技大学</div>
+                    <div class="campus-date">2021.01 - 2023.05</div>
+                    <div class="campus-desc">负责大学生创新创业训练计划项目的申报、实施与结题，培养创新思维与实践能力。</div>
+                </div>
+                
+                <div class="campus-item">
+                    <div class="campus-role">校学生会学创部干事</div>
+                    <div class="campus-org">南方科技大学学生会</div>
+                    <div class="campus-date">2019.09 - 2021.01</div>
+                    <div class="campus-desc">参与组织学术讲座、竞赛活动，服务同学学习需求，提升组织协调能力。</div>
+                </div>
+                
+                <div class="campus-item">
+                    <div class="campus-role">致诚书院学生会外联部部员</div>
+                    <div class="campus-org">南方科技大学致诚书院</div>
+                    <div class="campus-date">2019.09 - 2020.09</div>
+                    <div class="campus-desc">负责书院对外联络与赞助事宜，锻炼沟通与交际能力。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 项目1详情模态框 -->
+    <div id="project1-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">非接触式心率检测仪器</h2>
+                <span class="close-btn" onclick="closeModal('project1')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-item">
+                    <div class="project-detail-header">
+                        <h3 class="project-main-title">非接触式心率检测仪器 (校企合作)</h3>
+                        <div class="project-subtitle">
+                            <span class="project-role-badge">项目负责人</span>
+                            <span class="project-date-badge">2023.12 - 2024.12</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">项目需求</h4>
+                        <div class="section-content">
+                            <p>针对医疗设备需求(WS/T659-2019标准)，制定毫米波心率检测方案，要求正确率高且可以多人同时测量。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">资源部署与项目管理</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>协调公司和学校团队，管理10万元项目预算</li>
+                                <li>协调相关仪器(雷达、VNA)等仪器使用</li>
+                                <li>制定甘特图跟踪进度，提前识别毫米波干扰风险并通过算法优化解决</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">技术方案与设计</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>基于TI雷达(60GHz，4GHz带宽)与DCA1000EVM采集板</li>
+                                <li>设计开缝耦合谐振腔天线并应用波束扫描技术，实现目标准确定位(高度/距离精度±5.5cm)</li>
+                                <li>开发三发四收MIMO微带阵列天线，优化水平角度定位算法，将角度分辨率提升至±2.5°</li>
+                                <li>通过直流滤波、解卷绕及小波变换进行信号预处理以抑制噪声</li>
+                                <li>构建CNN与BP神经网络模型，有效提取心率特征，显著提升检测准确性与抗干扰能力</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">项目成果</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>带领团队提前2周交付原型机</li>
+                                <li>误差率从5%降至2.2%(达成医疗可用标准)</li>
+                                <li>成功应用于健康监测设备中</li>
+                                <li>实现了多人同时测量的功能需求</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">使用的技术栈</h4>
+                        <div class="section-content">
+                            <span class="skill-tag">毫米波雷达</span>
+                            <span class="skill-tag">TI雷达</span>
+                            <span class="skill-tag">MIMO天线</span>
+                            <span class="skill-tag">CNN神经网络</span>
+                            <span class="skill-tag">BP神经网络</span>
+                            <span class="skill-tag">信号处理</span>
+                            <span class="skill-tag">波束扫描</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 项目2详情模态框 -->
+    <div id="project2-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">VNA呼吸检测</h2>
+                <span class="close-btn" onclick="closeModal('project2')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-item">
+                    <div class="project-detail-header">
+                        <h3 class="project-main-title">VNA呼吸检测 (校企合作)</h3>
+                        <div class="project-subtitle">
+                            <span class="project-role-badge">算法负责人</span>
+                            <span class="project-date-badge">2024.07 - 2024.11</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">项目需求</h4>
+                        <div class="section-content">
+                            <p>针对无感睡眠监测场景，开发生命体征信号提取算法，要求能够有效抑制体动干扰并实现咳嗽等异常呼吸事件的精准识别。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">资源部署</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>作为课题组与华屹医疗合作项目的算法负责人</li>
+                                <li>协调使用NS227A VNA与合作方提供的波束扫描天线设备</li>
+                                <li>构建多通道信号采集与处理验证系统</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">技术方案与设计</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>基于VNA回波信号构建人体呼吸信号实时提取流程</li>
+                                <li>提出BPM消除算法与多信号定位分离技术，有效抑制90%体动干扰</li>
+                                <li>训练反向传播(BP)神经网络模型，结合时频域特征提取</li>
+                                <li>实现对轻微咳嗽行为的精确识别，准确率达到94%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">进度与风险管理</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>按模块分阶段验证算法性能</li>
+                                <li>早期发现体动与咳嗽信号混淆风险</li>
+                                <li>通过多特征融合网络优化模型判别力</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">项目成果</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>成功解决人体运动干扰与微弱咳嗽事件识别难题</li>
+                                <li>算法已集成于华屹医疗无感睡眠监测仪，进入量产测试阶段</li>
+                                <li>实现呼吸信号的实时监测与异常自动判别</li>
+                                <li>咳嗽识别准确率达到94%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">使用的技术栈</h4>
+                        <div class="section-content">
+                            <span class="skill-tag">VNA信号处理</span>
+                            <span class="skill-tag">BP神经网络</span>
+                            <span class="skill-tag">BPM消除算法</span>
+                            <span class="skill-tag">时频域分析</span>
+                            <span class="skill-tag">多特征融合</span>
+                            <span class="skill-tag">Matlab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 项目3详情模态框 -->
+    <div id="project3-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">谐振器耦合波束扫描天线设计</h2>
+                <span class="close-btn" onclick="closeModal('project3')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-item">
+                    <div class="project-detail-header">
+                        <h3 class="project-main-title">谐振器耦合波束扫描天线设计</h3>
+                        <div class="project-subtitle">
+                            <span class="project-role-badge">独立完成</span>
+                            <span class="project-date-badge">2023.09 - 2024.09</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">项目经历</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>独立运用CST软件设计三腔体耦合天线，实现阵列化布局，针对毫米波频段60-64GHz进行优化</li>
+                                <li>设计并联微带天线，确保与扫描天线极化方向与工作频率一致，并优化横向与扫描方向的HPBW</li>
+                                <li>设计GCPW转波导转接器与SIW阵列转接线路，确保低损耗与等相位传输，解决传输线转接设计难题</li>
+                                <li>采用RO3003介质板与沉金工艺进行加工，使用VNA进行参数测试，解决开放性阻带、谐振腔频率调节、波束偏移及加工难题</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">项目成果</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>成功设计出毫米波频段内波束扫描范围-22°到+25°</li>
+                                <li>增益高于12dBi，S11<-10dB的谐振器耦合波束扫描天线</li>
+                                <li>天线已应用于健康检测仪器中，具有一定的实际应用价值</li>
+                                <li>解决了毫米波频段天线设计的多个技术难题</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">使用的技术栈</h4>
+                        <div class="section-content">
+                            <span class="skill-tag">CST仿真</span>
+                            <span class="skill-tag">天线设计</span>
+                            <span class="skill-tag">毫米波技术</span>
+                            <span class="skill-tag">SIW阵列</span>
+                            <span class="skill-tag">GCPW转波导</span>
+                            <span class="skill-tag">VNA测试</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">技术参数</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>工作频段：60-64GHz</li>
+                                <li>波束扫描范围：-22° 到 +25°</li>
+                                <li>增益：>12dBi</li>
+                                <li>回波损耗：S11 < -10dB</li>
+                                <li>介质板：RO3003</li>
+                                <li>工艺：沉金工艺</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 所有项目概览模态框 -->
+    <div id="projects-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">所有项目经历概览</h2>
+                <span class="close-btn" onclick="closeModal('projects')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-item">
+                    <h3 class="skills-category">非接触式心率检测仪器 (2023.12 - 2024.12)</h3>
+                    <p><strong>角色：</strong>项目负责人</p>
+                    <p><strong>主要成就：</strong>带领团队提前2周交付原型机，将误差率从5%降至2.2%，达成医疗可用标准，应用于健康监测设备。</p>
+                    <p><strong>关键技术：</strong>毫米波雷达、MIMO天线、CNN/BP神经网络、波束扫描技术</p>
+                </div>
+                
+                <div class="project-detail-item">
+                    <h3 class="skills-category">VNA呼吸检测 (2024.07 - 2024.11)</h3>
+                    <p><strong>角色：</strong>算法负责人</p>
+                    <p><strong>主要成就：</strong>开发呼吸检测算法准确率94%，已集成于华屹医疗无感睡眠监测仪并进入量产测试阶段。</p>
+                    <p><strong>关键技术：</strong>VNA信号处理、BP神经网络、BPM消除算法、时频域特征提取</p>
+                </div>
+                
+                <div class="project-detail-item">
+                    <h3 class="skills-category">谐振器耦合波束扫描天线设计 (2023.09 - 2024.09)</h3>
+                    <p><strong>角色：</strong>独立完成</p>
+                    <p><strong>主要成就：</strong>设计出波束扫描范围-22°到+25°、增益>12dBi的天线，已应用于健康检测仪器。</p>
+                    <p><strong>关键技术：</strong>CST仿真、天线设计、SIW阵列、毫米波技术</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4 class="section-title">项目管理能力总结</h4>
+                    <div class="section-content">
+                        <ul>
+                            <li><strong>资源管理：</strong>成功管理10万元项目预算，协调多团队合作</li>
+                            <li><strong>进度控制：</strong>使用甘特图跟踪进度，提前识别并解决技术风险</li>
+                            <li><strong>成果交付：</strong>所有项目均按时或提前交付，达成预定技术指标</li>
+                            <li><strong>跨领域协作：</strong>在医疗健康、无线通信、信号处理等多个领域具备项目经验</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 实习经历详情模态框 -->
+    <div id="internship1-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">美的集团实习经历</h2>
+                <span class="close-btn" onclick="closeModal('internship1')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-item">
+                    <div class="project-detail-header">
+                        <h3 class="project-main-title">美的集团 - 射频仿真工程师 (实习)</h3>
+                        <div class="project-subtitle">
+                            <span class="project-role-badge">射频仿真工程师</span>
+                            <span class="project-date-badge">2026.06 - 2026.08 (预计)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">工作职责与项目</h4>
+                        <div class="section-content">
+                            <p>参与下一代转盘微波炉波导天线设计，利用顶馈开缝的方式，实现降本2.2元：</p>
+                            <ul>
+                                <li>利用HFSS进行波导天线以及微波炉腔体仿真，验证顶馈开缝方式的可行性与匹配，观察表面电流与腔体内电场分布进行开缝形状与尺寸的选择，完成结构设计</li>
+                                <li>将加工后的天线组装到样机上，完成能耗、煮食、温升测试，根据煮食结果进行结构的修改，利用铝箔纸进行修正</li>
+                                <li>完成设计后进行压板处理，并进一步测试和优化，最终完成波导天线设计，在实现降本的基础上保证食物的受热的均匀性和消除阳极温升</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">实习成果</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>成功设计新型波导天线，实现单产品<strong>成本降低2.2元</strong></li>
+                                <li>验证了顶馈开缝方式的可行性，优化了天线结构设计</li>
+                                <li>确保天线性能满足微波炉的加热均匀性和安全性要求</li>
+                                <li>掌握了从仿真设计到实物测试的完整产品开发流程</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">使用的技术栈</h4>
+                        <div class="section-content">
+                            <span class="skill-tag">HFSS仿真</span>
+                            <span class="skill-tag">波导天线设计</span>
+                            <span class="skill-tag">微波炉腔体仿真</span>
+                            <span class="skill-tag">成本优化</span>
+                            <span class="skill-tag">产品测试</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-section">
+                        <h4 class="section-title">获得的经验</h4>
+                        <div class="section-content">
+                            <ul>
+                                <li>企业级产品开发流程与标准</li>
+                                <li>成本控制与性能平衡的实际工程经验</li>
+                                <li>从理论仿真到实际产品落地的完整流程</li>
+                                <li>大型企业跨部门协作与沟通</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 所有实习经历概览模态框 -->
+    <div id="internships-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">实习经历概览</h2>
+                <span class="close-btn" onclick="closeModal('internships')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-item">
+                    <h3 class="skills-category">美的集团 - 射频仿真工程师 (2026.06 - 2026.08)</h3>
+                    <p><strong>部门：</strong>研发中心 - 射频技术部</p>
+                    <p><strong>主要职责：</strong>参与下一代转盘微波炉波导天线设计与优化</p>
+                    <p><strong>核心成果：</strong></p>
+                    <ul>
+                        <li>通过顶馈开缝天线设计实现<strong>单产品降本2.2元</strong></li>
+                        <li>完成从仿真设计到实物测试的完整开发流程</li>
+                        <li>优化天线结构，确保加热均匀性和安全性</li>
+                    </ul>
+                    <p><strong>关键技术应用：</strong>HFSS电磁仿真、波导天线设计、微波炉腔体分析、成本优化</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4 class="section-title">实习收获与能力提升</h4>
+                    <div class="section-content">
+                        <ul>
+                            <li><strong>工程实践能力：</strong>将学校学习的理论知识应用于实际产品开发</li>
+                            <li><strong>成本意识：</strong>在企业环境中理解成本控制对产品设计的重要性</li>
+                            <li><strong>跨部门协作：</strong>与结构设计、生产制造、测试验证等多个部门协作</li>
+                            <li><strong>问题解决能力：</strong>面对实际工程问题，从仿真、测试到迭代优化的完整解决流程</li>
+                            <li><strong>行业认知：</strong>了解家电行业射频技术发展趋势与市场需求</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h4 class="section-title">职业发展价值</h4>
+                    <div class="section-content">
+                        <ul>
+                            <li>验证了在学校积累的射频与天线设计技术在实际工业场景中的应用价值</li>
+                            <li>积累了大型企业工作经验和项目管理流程知识</li>
+                            <li>建立了从学术研究到产业应用的桥梁认知</li>
+                            <li>为未来从事技术项目管理奠定了实践基础</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 模态框控制函数
+        function openModal(modalType) {
+            let modalId = '';
+            switch(modalType) {
+                case 'skills':
+                    modalId = 'skills-modal';
+                    break;
+                case 'publications':
+                    modalId = 'publications-modal';
+                    break;
+                case 'campus':
+                    modalId = 'campus-modal';
+                    break;
+                case 'project1':
+                    modalId = 'project1-modal';
+                    break;
+                case 'project2':
+                    modalId = 'project2-modal';
+                    break;
+                case 'project3':
+                    modalId = 'project3-modal';
+                    break;
+                case 'projects':
+                    modalId = 'projects-modal';
+                    break;
+                case 'internship1':
+                    modalId = 'internship1-modal';
+                    break;
+                case 'internships':
+                    modalId = 'internships-modal';
+                    break;
+                default:
+                    return;
+            }
+            
+            document.getElementById(modalId).style.display = 'block';
+        }
+        
+        function closeModal(modalType) {
+            let modalId = '';
+            switch(modalType) {
+                case 'skills':
+                    modalId = 'skills-modal';
+                    break;
+                case 'publications':
+                    modalId = 'publications-modal';
+                    break;
+                case 'campus':
+                    modalId = 'campus-modal';
+                    break;
+                case 'project1':
+                    modalId = 'project1-modal';
+                    break;
+                case 'project2':
+                    modalId = 'project2-modal';
+                    break;
+                case 'project3':
+                    modalId = 'project3-modal';
+                    break;
+                case 'projects':
+                    modalId = 'projects-modal';
+                    break;
+                case 'internship1':
+                    modalId = 'internship1-modal';
+                    break;
+                case 'internships':
+                    modalId = 'internships-modal';
+                    break;
+                default:
+                    return;
+            }
+            
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // 点击模态框外部关闭
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+        
+        // 为所有技能标签添加点击效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+            
+            // 打印简历功能
+            const printBtn = document.querySelector('.btn[href="javascript:window.print()"]');
+            if(printBtn) {
+                printBtn.addEventListener('click', function() {
+                    window.print();
+                });
+            }
+            
+            // 为所有预览项添加点击效果
+            const previewItems = document.querySelectorAll('.preview-item');
+            previewItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
